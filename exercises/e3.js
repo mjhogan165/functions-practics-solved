@@ -15,9 +15,14 @@
  */
 
 // Your code goes here...
-
-
-
+function doesArrayIncludeItemsBetweenVals(array, value1, value2) {
+  for (let number of array) {
+    if (number > value1 && number < value2) {
+      return true;
+    }
+  }
+  return false;
+}
 
 /**
  * ====================================================
@@ -27,29 +32,38 @@
  * Arrow Function name: getValueWithConditionTwo;
  * Variable name for the function expression: getValueWithConditionThree;
  * All three functions resolve the same task:
-    * The function takes two numbers as arguments
-    * If the numbers are both equal to 40, return the sum of them
-    * Else return the doubled sum of them
+ * The function takes two numbers as arguments
+ * If the numbers are both equal to 40, return the sum of them
+ * Else return the doubled sum of them
  * getValueWithConditionOne(40, 40) => 80;
  * getValueWithConditionOne(20, 30) => 100;
  */
 
 // Your code goes here...
-
-
-
+function getValueWithConditionOne(number1, number2) {
+  const sum = number1 + number2;
+  return number1 === 40 && number2 === 40 ? sum : (number1 + number2) * 2;
+}
+const getValueWithConditionTwo = (number1, number2) => {
+  const sum = number1 + number2;
+  return number1 === 40 && number2 === 40 ? sum : (number1 + number2) * 2;
+};
+const getValueWithConditionThree = function (number1, number2) {
+  const sum = number1 + number2;
+  return number1 === 40 && number2 === 40 ? sum : (number1 + number2) * 2;
+};
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-3"
 // If the test has all tests passed, switch to the next exercise file
 // If any of the tests fails, refactor the code and run the test command after you've fixed the function
 
-
 // Do not delete or change the lines beneath
 const f = {
-  doesArrayIncludeItemsBetweenVals: doesArrayIncludeItemsBetweenVals || undefined,
+  doesArrayIncludeItemsBetweenVals:
+    doesArrayIncludeItemsBetweenVals || undefined,
   getValueWithConditionOne: getValueWithConditionOne || undefined,
   getValueWithConditionTwo: getValueWithConditionTwo || undefined,
   getValueWithConditionThree: getValueWithConditionThree || undefined,
-}
+};
 export { f };
